@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4a7b8">
+  <title>Snout & Snug</title>
+  <meta name="description" content="The honest journey toward building an animal sanctuary. Real animals, real projects, real chaos.">
+  <style>
+    :root{
+      --pink:#f4a7b8;
+      --pink-dark:#d86f89;
+      --pink-soft:#fff0f4;
+      --white:#fffdfd;
+      --ink:#2d2428;
+      --muted:#75666b;
+      --line:#f1cbd4;
+      --shadow:0 16px 42px rgba(117,63,79,.15);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, #ffe8ee 0, transparent 34%),
+        linear-gradient(180deg,#fffafb 0%,#ffffff 55%,#fff6f9 100%);
+      color:var(--ink);
+    }
+
+    .wrap{
+      width:min(100%,640px);
+      margin:0 auto;
+      padding:18px 16px 44px;
+    }
+
+    .brand-line{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:2px 0 14px;
+      color:var(--pink-dark);
+      font-size:.8rem;
+      font-weight:900;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+
+    .brand-line:before,.brand-line:after{
+      content:"";
+      height:1px;
+      background:var(--line);
+      flex:1;
+    }
+
+    .hero{
+      overflow:hidden;
+      background:rgba(255,255,255,.95);
+      border:1px solid var(--line);
+      border-radius:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-photo{
+      position:relative;
+      min-height:430px;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.02) 44%,rgba(38,18,26,.76) 100%),
+        url("IMG_4734.png") center 38%/cover no-repeat;
+    }
+
+    .logo{
+      position:absolute;
+      top:18px;
+      left:18px;
+      width:88px;
+      height:88px;
+      border-radius:50%;
+      background:white;
+      padding:5px;
+      object-fit:contain;
+      box-shadow:0 9px 24px rgba(0,0,0,.18);
+    }
+
+    .hero-copy{
+      position:absolute;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      color:white;
+      text-shadow:0 2px 16px rgba(0,0,0,.35);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:9px;
+      padding:7px 11px;
+      border-radius:999px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.38);
+      backdrop-filter:blur(10px);
+      font-size:.74rem;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(2.55rem,11vw,4rem);
+      line-height:.92;
+      letter-spacing:-.06em;
+    }
+
+    .hero-copy p{
+      margin:13px 0 0;
+      max-width:32rem;
+      font-size:1.02rem;
+      line-height:1.48;
+    }
+
+    .inside{
+      padding:20px;
+    }
+
+    .primary{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      width:100%;
+      min-height:62px;
+      border-radius:18px;
+      background:var(--pink);
+      color:#2c1d23;
+      text-decoration:none;
+      font-weight:900;
+      font-size:1.06rem;
+      box-shadow:0 10px 24px rgba(216,112,137,.28);
+    }
+
+    .primary small{
+      padding:4px 8px;
+      border-radius:999px;
+      background:white;
+      color:var(--pink-dark);
+      font-size:.68rem;
+      letter-spacing:.06em;
+    }
+
+    .intro{
+      margin:18px 2px 3px;
+      color:var(--muted);
+      line-height:1.58;
+      text-align:center;
+    }
+
+    .about{
+      margin-top:22px;
+      padding:21px;
+      background:var(--pink-soft);
+      border:1px solid var(--line);
+      border-radius:23px;
+    }
+
+    .about h2,.story h2{
+      margin:0 0 8px;
+      font-size:1.2rem;
+      letter-spacing:-.02em;
+    }
+
+    .about p,.story p{
+      margin:0;
+      color:#5f5055;
+      line-height:1.58;
+    }
+
+    .section-title{
+      margin:27px 3px 12px;
+      font-size:1rem;
+    }
+
+    .links{
+      display:grid;
+      gap:11px;
+    }
+
+    .link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:58px;
+      padding:0 17px;
+      border:1px solid var(--line);
+      border-radius:17px;
+      background:white;
+      text-decoration:none;
+      font-weight:850;
+      box-shadow:0 7px 20px rgba(120,75,88,.06);
+    }
+
+    .link span:last-child{
+      color:var(--pink-dark);
+      font-size:1.05rem;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .card{
+      padding:16px;
+      background:white;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:0 8px 22px rgba(120,75,88,.07);
+    }
+
+    .card span{
+      display:block;
+      margin-bottom:6px;
+      color:var(--pink-dark);
+      font-size:.7rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .card strong{
+      font-size:.96rem;
+      line-height:1.28;
+    }
+
+    .story{
+      margin-top:24px;
+      padding:21px;
+      border-radius:23px;
+      background:white;
+      border:1px solid var(--line);
+    }
+
+    footer{
+      padding:28px 4px 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:.78rem;
+    }
+
+    @media(max-width:430px){
+      .cards{grid-template-columns:1fr}
+      .logo{width:78px;height:78px}
+      .hero-photo{min-height:440px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand-line">Snout &amp; Snug</div>
+
+    <section class="hero">
+      <div class="hero-photo">
+        <img class="logo" src="ISIMG-795212.jpeg" alt="Snout & Snug logo">
+        <div class="hero-copy">
+          <div class="eyebrow">Real animals. Real projects. Real chaos.</div>
+          <h1>Snout &amp;<br>Snug</h1>
+          <p>The honest journey toward building an animal sanctuary—starting on one messy acre.</p>
+        </div>
+      </div>
+
+      <div class="inside">
+        <a class="primary" href="https://www.twitch.tv/jacobsnug">
+          Come Hang Out Live <small>TWITCH</small>
+        </a>
+
+        <p class="intro">The animals are thriving. The property is still humbling us. We’re learning in public and trying to make it better without pretending we already have it figured out.</p>
+
+        <div class="cards">
+          <div class="card">
+            <span>Next stream</span>
+            <strong>Schedule coming soon</strong>
+          </div>
+          <div class="card">
+            <span>Current project</span>
+            <strong>Making the farm better one messy job at a time</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>Hey, I’m Jacob.</h2>
+      <p>I share the real work behind caring for our animals, fixing the property, learning through mistakes, and working toward the bigger dream of creating an animal sanctuary.</p>
+    </section>
+
+    <h2 class="section-title">Choose your adventure</h2>
+    <div class="links">
+      <a class="link" href="https://www.twitch.tv/jacobsnug"><span>Watch the livestream</span><span>↗</span></a>
+      <a class="link" href="https://youtube.com/@snoutsnug?si=yZzoDQ-UW8FpQ7fY"><span>Watch on YouTube</span><span>↗</span></a>
+      <a class="link" href="https://www.tiktok.com/@snoutsnug?_r=1&_t=ZT-97rV3EbZd77"><span>Follow on TikTok</span><span>↗</span></a>
+      <a class="link" href="https://www.facebook.com/share/196wKCpQoU/?mibextid=wwXIfr"><span>Join us on Facebook</span><span>↗</span></a>
+    </div>
+
+    <section class="story">
+      <h2>The antidote to the perfect internet farm.</h2>
+      <p>Some days we build. Some days we fix the thing we built wrong. Most days the animals have other plans. That’s the story.</p>
+    </section>
+
+    <footer>© Snout &amp; Snug · Built for the animals, the community, and the bigger dream.</footer>
+  </main>
+</body>
+</html>
