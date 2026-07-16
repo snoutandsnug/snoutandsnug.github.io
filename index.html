@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7bccb">
+  <meta name="color-scheme" content="light">
+  <title>Snout & Snug</title>
+  <meta name="description" content="Real animals. Real projects. Real chaos. Follow the honest journey from one messy acre toward an animal sanctuary.">
+
+  <meta property="og:title" content="Snout & Snug">
+  <meta property="og:description" content="The farm isn’t perfect. That’s the point.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="IMG_4734.png">
+
+  <style>
+    :root{
+      --cream:#fffaf4;
+      --cream-deep:#fff3ea;
+      --cream-card:#fff7f1;
+      --pink:#f7bccb;
+      --pink-strong:#e98aa6;
+      --pink-deep:#ce6684;
+      --ink:#44383b;
+      --muted:#7d6f73;
+      --line:#f1d8df;
+      --shadow:0 24px 60px rgba(120,68,82,.14);
+      --soft-shadow:0 12px 30px rgba(120,68,82,.08);
+      --radius-xl:34px;
+      --radius-lg:26px;
+      --radius-md:20px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%,rgba(247,188,203,.32) 0,transparent 28rem),
+        radial-gradient(circle at 100% 34%,rgba(255,235,241,.58) 0,transparent 24rem),
+        linear-gradient(180deg,var(--cream) 0%,#fffdf9 52%,var(--cream) 100%);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    img{display:block;max-width:100%}
+    a{-webkit-tap-highlight-color:transparent}
+
+    .page{
+      width:min(100%,700px);
+      margin:0 auto;
+      padding:18px 16px calc(104px + env(safe-area-inset-bottom));
+    }
+
+    .brandbar{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin:0 0 15px;
+      color:var(--pink-deep);
+      font-size:.74rem;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .brandbar:before,.brandbar:after{
+      content:"";
+      width:46px;
+      height:1px;
+      background:var(--line);
+    }
+
+    .hero{
+      position:relative;
+      min-height:610px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      background:#2e2327;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-photo{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 34%;
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg,rgba(29,18,23,.02) 24%,rgba(29,18,23,.24) 54%,rgba(29,18,23,.94) 100%);
+    }
+
+    .logo{
+      position:absolute;
+      z-index:2;
+      top:18px;
+      left:18px;
+      width:82px;
+      aspect-ratio:1;
+      object-fit:contain;
+      padding:5px;
+      border-radius:50%;
+      background:var(--cream);
+      box-shadow:0 10px 26px rgba(0,0,0,.2);
+    }
+
+    .hero-copy{
+      position:absolute;
+      z-index:2;
+      left:22px;
+      right:22px;
+      bottom:22px;
+      color:#fffaf6;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      margin-bottom:12px;
+      padding:8px 12px;
+      border:1px solid rgba(255,250,246,.42);
+      border-radius:999px;
+      background:rgba(255,250,246,.14);
+      backdrop-filter:blur(12px);
+      font-size:.69rem;
+      font-weight:900;
+      letter-spacing:.07em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0;
+      max-width:570px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2.9rem,11vw,4.8rem);
+      line-height:.91;
+      letter-spacing:-.055em;
+      text-shadow:0 4px 24px rgba(0,0,0,.34);
+    }
+
+    .hero-copy p{
+      margin:15px 0 19px;
+      max-width:35rem;
+      color:rgba(255,250,246,.93);
+      font-size:1rem;
+      line-height:1.52;
+    }
+
+    .primary{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:11px;
+      min-height:64px;
+      padding:15px 18px;
+      border-radius:19px;
+      background:linear-gradient(135deg,#f9c7d3 0%,#f5aec0 100%);
+      color:#3a2b30;
+      text-decoration:none;
+      font-weight:950;
+      box-shadow:0 14px 30px rgba(0,0,0,.22);
+      transition:transform .15s ease,filter .15s ease;
+    }
+
+    .primary:active{transform:scale(.985)}
+
+    .primary svg{
+      width:24px;
+      height:24px;
+      flex:0 0 24px;
+    }
+
+    .intro{
+      padding:28px 7px 10px;
+      text-align:center;
+    }
+
+    .intro h2{
+      margin:0 0 9px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.55rem;
+      letter-spacing:-.035em;
+    }
+
+    .intro p{
+      margin:0 auto;
+      max-width:36rem;
+      color:var(--muted);
+      line-height:1.62;
+    }
+
+    .section-title{
+      margin:26px 3px 12px;
+      font-size:1.08rem;
+      letter-spacing:-.025em;
+    }
+
+    .platforms{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .platform{
+      position:relative;
+      min-height:168px;
+      overflow:hidden;
+      padding:18px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(180deg,var(--cream-card) 0%,var(--cream-deep) 100%);
+      color:var(--ink);
+      text-decoration:none;
+      box-shadow:var(--soft-shadow);
+      transition:transform .15s ease,box-shadow .15s ease;
+    }
+
+    .platform:active{transform:scale(.985)}
+
+    .platform:before{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      right:-44px;
+      top:-44px;
+      border-radius:50%;
+      background:rgba(247,188,203,.35);
+    }
+
+    .platform-logo{
+      position:relative;
+      z-index:1;
+      display:grid;
+      place-items:center;
+      width:50px;
+      height:50px;
+      margin-bottom:19px;
+      border-radius:17px;
+      background:var(--pink);
+      color:#49383d;
+      box-shadow:0 8px 20px rgba(206,102,132,.15);
+    }
+
+    .platform-logo svg{
+      width:27px;
+      height:27px;
+      fill:currentColor;
+    }
+
+    .platform strong{
+      display:block;
+      margin-bottom:5px;
+      font-size:1.02rem;
+    }
+
+    .platform span{
+      display:block;
+      color:var(--muted);
+      font-size:.8rem;
+      line-height:1.35;
+    }
+
+    .go{
+      position:absolute;
+      right:17px;
+      bottom:16px;
+      color:var(--pink-deep);
+      font-size:1.05rem;
+      font-weight:950;
+    }
+
+    .now{
+      margin-top:22px;
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      background:
+        linear-gradient(135deg,rgba(247,188,203,.28) 0%,rgba(255,247,241,.96) 72%);
+      box-shadow:var(--soft-shadow);
+    }
+
+    .eyebrow{
+      margin:0 0 8px;
+      color:var(--pink-deep);
+      font-size:.7rem;
+      font-weight:950;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .now h2{
+      margin:0 0 9px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.48rem;
+      letter-spacing:-.035em;
+    }
+
+    .now p{
+      margin:0;
+      color:#66575c;
+      line-height:1.6;
+    }
+
+    .crew{
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      padding:0 1px 8px;
+      scrollbar-width:none;
+      scroll-snap-type:x mandatory;
+    }
+
+    .crew::-webkit-scrollbar{display:none}
+
+    .crew-card{
+      flex:0 0 165px;
+      min-height:134px;
+      padding:17px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:linear-gradient(180deg,var(--cream-card) 0%,var(--cream-deep) 100%);
+      scroll-snap-align:start;
+      box-shadow:var(--soft-shadow);
+    }
+
+    .crew-card b{
+      display:block;
+      margin-bottom:9px;
+      font-size:1rem;
+    }
+
+    .crew-card span{
+      color:var(--muted);
+      font-size:.82rem;
+      line-height:1.38;
+    }
+
+    .mission{
+      margin-top:22px;
+      padding:27px 24px;
+      border:1px solid var(--line);
+      border-radius:var(--radius-lg);
+      background:linear-gradient(180deg,var(--cream-card) 0%,var(--cream-deep) 100%);
+      text-align:center;
+      box-shadow:var(--soft-shadow);
+    }
+
+    .mission h2{
+      margin:0 0 10px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:1.5rem;
+      letter-spacing:-.035em;
+    }
+
+    .mission p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.62;
+    }
+
+    footer{
+      padding:30px 8px 4px;
+      color:var(--muted);
+      text-align:center;
+      font-size:.76rem;
+      line-height:1.45;
+    }
+
+    .sticky{
+      position:fixed;
+      z-index:30;
+      left:50%;
+      bottom:calc(10px + env(safe-area-inset-bottom));
+      transform:translateX(-50%);
+      width:min(calc(100% - 24px),676px);
+      padding:7px;
+      border:1px solid rgba(241,216,223,.96);
+      border-radius:22px;
+      background:rgba(255,250,244,.91);
+      box-shadow:0 15px 40px rgba(88,43,56,.18);
+      backdrop-filter:blur(16px);
+    }
+
+    .sticky a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:53px;
+      border-radius:16px;
+      background:var(--pink);
+      color:#392a2f;
+      text-decoration:none;
+      font-weight:950;
+    }
+
+    .sticky svg{
+      width:21px;
+      height:21px;
+      fill:currentColor;
+    }
+
+    @media(max-width:470px){
+      .hero{min-height:625px}
+      .platforms{grid-template-columns:1fr}
+      .platform{min-height:122px}
+      .platform-logo{margin-bottom:14px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *{transition:none!important}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="brandbar">Snout &amp; Snug</div>
+
+    <section class="hero">
+      <img class="hero-photo" src="IMG_4734.png" alt="Jacob holding a duck on the Snout & Snug farm">
+      <img class="logo" src="ISIMG-795212.jpeg" alt="Snout & Snug logo">
+
+      <div class="hero-copy">
+        <div class="tag">One acre. A lot of animals. A bigger dream.</div>
+        <h1>The farm isn’t perfect. That’s the point.</h1>
+        <p>We’re learning how to give our animals better lives while working toward a real sanctuary—and bringing you through the mess with us.</p>
+
+        <a class="primary" href="https://www.twitch.tv/jacobsnug">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 3h16v11.2l-4.2 4.1h-3.2l-2 2H8v-2H4V3Zm2 2v11h4v2l2-2h4.8l1.2-1.2V5H6Zm4 3h2v5h-2V8Zm5 0h2v5h-2V8Z"/>
+          </svg>
+          Come hang out live
+        </a>
+      </div>
+    </section>
+
+    <section class="intro">
+      <h2>Hey, I’m Jacob.</h2>
+      <p>Some days we build. Some days we fix what we built wrong. Most days the animals change the plan.</p>
+    </section>
+
+    <h2 class="section-title">Follow the journey</h2>
+
+    <nav class="platforms" aria-label="Social platforms">
+      <a class="platform" href="https://youtube.com/@snoutsnug?si=yZzoDQ-UW8FpQ7fY">
+        <div class="platform-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M23.2 7.1a3 3 0 0 0-2.1-2.1C19.2 4.5 12 4.5 12 4.5s-7.2 0-9.1.5A3 3 0 0 0 .8 7.1 31 31 0 0 0 .3 12a31 31 0 0 0 .5 4.9A3 3 0 0 0 2.9 19c1.9.5 9.1.5 9.1.5s7.2 0 9.1-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.9 31 31 0 0 0-.5-4.9ZM9.7 15.5v-7l6.1 3.5-6.1 3.5Z"/>
+          </svg>
+        </div>
+        <strong>YouTube</strong>
+        <span>Full videos, projects, and animal stories.</span>
+        <div class="go">↗</div>
+      </a>
+
+      <a class="platform" href="https://www.tiktok.com/@snoutsnug?_r=1&_t=ZT-97rV3EbZd77">
+        <div class="platform-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M14.3 3h3a5.7 5.7 0 0 0 3.4 3.5v3a9 9 0 0 1-3.4-1.1v6.2a6 6 0 1 1-5.2-5.9v3.1a3 3 0 1 0 2.2 2.8V3Z"/>
+          </svg>
+        </div>
+        <strong>TikTok</strong>
+        <span>Quick chaos, funny moments, and daily updates.</span>
+        <div class="go">↗</div>
+      </a>
+
+      <a class="platform" href="https://www.facebook.com/share/196wKCpQoU/?mibextid=wwXIfr">
+        <div class="platform-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12Z"/>
+          </svg>
+        </div>
+        <strong>Facebook</strong>
+        <span>Community posts, conversations, and updates.</span>
+        <div class="go">↗</div>
+      </a>
+
+      <a class="platform" href="https://www.twitch.tv/jacobsnug">
+        <div class="platform-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 3h16v11.2l-4.2 4.1h-3.2l-2 2H8v-2H4V3Zm2 2v11h4v2l2-2h4.8l1.2-1.2V5H6Zm4 3h2v5h-2V8Zm5 0h2v5h-2V8Z"/>
+          </svg>
+        </div>
+        <strong>Twitch</strong>
+        <span>Live farm projects, animals, and real-time chaos.</span>
+        <div class="go">↗</div>
+      </a>
+    </nav>
+
+    <section class="now">
+      <p class="eyebrow">Right now</p>
+      <h2>Trying to get this little property under control.</h2>
+      <p>The animals are doing pretty well. The systems, mud, unfinished projects, and our available energy are the real bottleneck.</p>
+    </section>
+
+    <h2 class="section-title">Meet some of the chaos</h2>
+
+    <div class="crew" aria-label="Snout & Snug animals">
+      <article class="crew-card"><b>🦆 Peanut</b><span>Professional snack inspector.</span></article>
+      <article class="crew-card"><b>🦃 Echo</b><span>The farm’s nosy aunt and unpaid supervisor.</span></article>
+      <article class="crew-card"><b>🐰 Binx</b><span>Quiet, opinionated, and still somehow part of the problem.</span></article>
+      <article class="crew-card"><b>🐔 The Flock</b><span>Many birds. Very few shared opinions.</span></article>
+    </div>
+
+    <section class="mission">
+      <h2>The antidote to the perfect internet farm.</h2>
+      <p>We have one messy acre, limited money, animals we love, and a dream of building a real sanctuary. We aren’t waiting until the story looks perfect to start telling it.</p>
+    </section>
+
+    <footer>
+      © Snout &amp; Snug · Real animals. Real projects. Real chaos.
+    </footer>
+  </main>
+
+  <div class="sticky">
+    <a href="https://www.twitch.tv/jacobsnug">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 3h16v11.2l-4.2 4.1h-3.2l-2 2H8v-2H4V3Zm2 2v11h4v2l2-2h4.8l1.2-1.2V5H6Zm4 3h2v5h-2V8Zm5 0h2v5h-2V8Z"/>
+      </svg>
+      Watch on Twitch
+    </a>
+  </div>
+</body>
+</html>
