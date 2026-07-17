@@ -424,6 +424,48 @@
       html{scroll-behavior:auto}
       *{transition:none!important}
     }
+  
+    .hero-actions{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:10px;
+      align-items:stretch;
+    }
+    .support-mini{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:7px;
+      min-width:126px;
+      padding:10px 13px;
+      border:1px solid rgba(241,216,223,.98);
+      border-radius:16px;
+      background:rgba(255,250,244,.92);
+      color:var(--ink);
+      text-decoration:none;
+      font-size:.78rem;
+      font-weight:850;
+      line-height:1.15;
+      box-shadow:0 9px 22px rgba(120,68,82,.12);
+      backdrop-filter:blur(10px);
+      transition:transform .15s ease, background-color .15s ease;
+    }
+    .support-mini:active{transform:scale(.985)}
+    .support-mini svg{
+      width:16px;
+      height:16px;
+      flex:0 0 16px;
+      fill:var(--pink-deep);
+    }
+    @media(max-width:470px){
+      .hero-actions{grid-template-columns:minmax(0,1fr) 116px}
+      .support-mini{
+        min-width:0;
+        padding:9px 10px;
+        font-size:.72rem;
+      }
+    }
+
   </style>
 </head>
 
@@ -440,12 +482,21 @@
         <h1>The farm isn’t perfect. That’s the point.</h1>
         <p>We’re learning how to give our animals better lives while working toward a real sanctuary—and bringing you through the mess with us.</p>
 
-        <a class="primary" href="https://www.twitch.tv/jacobsnug">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 3h16v11.2l-4.2 4.1h-3.2l-2 2H8v-2H4V3Zm2 2v11h4v2l2-2h4.8l1.2-1.2V5H6Zm4 3h2v5h-2V8Zm5 0h2v5h-2V8Z"/>
-          </svg>
-          Come hang out live
-        </a>
+        <div class="hero-actions">
+          <a class="primary" href="https://www.twitch.tv/jacobsnug">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 3h16v11.2l-4.2 4.1h-3.2l-2 2H8v-2H4V3Zm2 2v11h4v2l2-2h4.8l1.2-1.2V5H6Zm4 3h2v5h-2V8Zm5 0h2v5h-2V8Z"/>
+            </svg>
+            Come hang out live
+          </a>
+
+          <a class="support-mini" href="https://streamlabs.com/jacobsnug/home" aria-label="Support the farm">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21s-7.2-4.35-9.6-8.55C.4 8.95 2.15 5 6.1 5c2.05 0 3.42 1.15 4.15 2.15C10.98 6.15 12.35 5 14.4 5c3.95 0 5.7 3.95 3.7 7.45C15.7 16.65 12 21 12 21Z"/>
+            </svg>
+            Support
+          </a>
+        </div>
       </div>
     </section>
 
